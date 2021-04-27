@@ -1,0 +1,46 @@
+{
+	"name": "Node.js & TypeScript",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Node version: 10, 12, 14
+		"args": { 
+			"VARIANT": "14"
+		}
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/zsh"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		// my common extensions
+		"mutantdino.resourcemonitor",
+		"formulahendry.code-runner",
+		"asciidoctor.asciidoctor-vscode",
+		"donjayamanne.githistory",
+		"mhutchie.git-graph",
+		"alefragnani.bookmarks",
+		"github.vscode-pull-request-github",
+		"eamodio.gitlens",
+		"hoovercj.vscode-power-mode",
+		// es-lint
+		"dbaeumer.vscode-eslint"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [4200,2015],
+
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+	"mounts": [
+		"source=${localWorkspaceFolder}/.devcontainer/app-scripts,target=/usr/local/share/app-scripts,type=bind,consistency=cached"
+	],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "sed -i 's/ZSH_THEME=.*/ZSH_THEME=\"agnoster\"/g' ~/.zshrc",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
+}
