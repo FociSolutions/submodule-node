@@ -1,4 +1,3 @@
-# [Choice] Node.js version: 14, 12, 10
 ARG VARIANT=16
 FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:${VARIANT}
 

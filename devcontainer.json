@@ -2,7 +2,6 @@
 	"name": "Node.js & TypeScript",
 	"build": {
 		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick a Node version: 10, 12, 14
 		"args": { 
 			"VARIANT": "16"
 		}
@@ -15,7 +14,6 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		// my common extensions
 		"mutantdino.resourcemonitor",
 		"formulahendry.code-runner",
 		"asciidoctor.asciidoctor-vscode",
@@ -25,8 +23,20 @@
 		"github.vscode-pull-request-github",
 		"eamodio.gitlens",
 		"hoovercj.vscode-power-mode",
-		// es-lint
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		// angualr pieces
+		"angular.ng-template",
+		// "johnpapa.angular-essentials",
+		"nrwl.angular-console",
+		"johnpapa.winteriscoming",
+		"pkief.material-icon-theme",
+		"msjsdiag.debugger-for-edge",
+		"firefox-devtools.vscode-firefox-debug",
+		"johnpapa.angular2",
+		"editorconfig.editorconfig",
+		"eg2.vscode-npm-script",
+		"johnpapa.vscode-peacock",
+		"esbenp.prettier-vscode"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
