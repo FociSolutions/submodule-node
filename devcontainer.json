@@ -2,16 +2,15 @@
 	"name": "Node.js & TypeScript",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": { 
-			"VARIANT": "16"
+		"args": {
+			"VARIANT": "16",
+			"USERNAME": "node"
 		}
 	},
-
 	// Set *default* container specific settings.json values on container create.
-	"settings": { 
+	"settings": {
 		"terminal.integrated.shell.linux": "/bin/zsh"
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"mutantdino.resourcemonitor",
@@ -38,20 +37,18 @@
 		"johnpapa.vscode-peacock",
 		"esbenp.prettier-vscode"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [4200,2015],
-
+	"forwardPorts": [
+		4200,
+		2015
+	],
 	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
 	"mounts": [
 		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
 		"source=${localEnv:HOME}/.gnupg,target=/home/vscode/.gnupg,type=bind,consistency=cached",
 	],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
-	"postCreateCommand": "sed -i 's/ZSH_THEME=.*/ZSH_THEME=\"agnoster\"/g' ~/.zshrc",
-
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node"
 }

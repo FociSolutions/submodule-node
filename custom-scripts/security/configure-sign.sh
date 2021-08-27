@@ -1,4 +1,5 @@
-# Syntax: ./github-ssh.sh [username]
+#! /bin/bash
+# Syntax: ./configure-sign.sh [username]
 
 USERNAME=${1:-"automatic"}
 
@@ -28,15 +29,6 @@ else
     USER_RC_PATH="/home/${USERNAME}"
 fi
 
-# we want the 'powerline' theme
-sed -i 's/ZSH_THEME=".*"/ZSH_THEME="agnoster"/g' ${USER_RC_PATH}/.zshrc
-
-# we want VI on the shell cli
-echo '# setting VI mode on the terminal 2021-01-30::wjs' >>${USER_RC_PATH}/.zshrc
-echo 'set -o vi' >>${USER_RC_PATH}/.zshrc
-
-# set the s/mime git commit signing
-# echo 'export GPPG_TTY=$(tty)'>>${USER_RC_PATH}/.zshrc
-
-# we want git to use nvim
-git config --global core.editor "nvim"
+# sourced from:
+# https://tutorials.technology/solved_errors/21-gpg-signing-failed-Inappropriate-ioctl-for-device.html
+# echo 'export GPG_TTY=$(tty)' >> ${USER_RC_PATH}/.zshrc
