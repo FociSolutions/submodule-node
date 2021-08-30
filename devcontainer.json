@@ -46,7 +46,9 @@
 		"source=${localEnv:HOME}/.gnupg,target=/home/node/.gnupg,type=bind,consistency=cached",
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install --global @vue/clin @vue/cli-service-global",
+	"postCreateCommand": "npm install --global @vue/cli",
+	// if you want cli-service installled use this one
+	// "postCreateCommand": "npm install --global @vue/cli @vue/cli-service-global",
 	"postStartCommand": "npm update --global @vue/cli",
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node"
