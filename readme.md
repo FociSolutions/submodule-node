@@ -38,7 +38,7 @@ Then clone and update the .devcontainer submodule.
 
 ```bash
 cd {root project}
-git submodule add https://github.com/waltiam/submodule-golang.git .devcontainer
+git submodule add https://github.com/waltiam/submodule-node.git .devcontainer
 git submodule init
 git submodule update
 ```
