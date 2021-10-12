@@ -48,12 +48,6 @@ COPY library-scripts/meta.env /usr/local/etc/vscode-dev-containers
 RUN su node -c "umask 0002 && npm install -g ${NODE_MODULES}" \
     && npm cache clean --force > /dev/null 2>&1
 
-# Install NeoVim 
-# ARG INSTALL_NEOVIM="true"
-COPY custom-scripts/neovim/* /tmp/library-scripts/
-RUN bash /tmp/library-scripts/install-neovim.sh "${USERNAME}" \
-    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/
-
 # Install and configure zsh
 COPY custom-scripts/zsh/* /tmp/library-scripts/
 RUN /bin/bash /tmp/library-scripts/update-zsh.sh "${USERNAME}" \
