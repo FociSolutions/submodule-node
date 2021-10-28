@@ -22,6 +22,7 @@
 		"github.vscode-pull-request-github",
 		"eamodio.gitlens",
 		"hoovercj.vscode-power-mode",
+    "vtrois.gitmoji-vscode",
 		"dbaeumer.vscode-eslint",
 		// angular pieces
 		"angular.ng-template",
@@ -44,8 +45,8 @@
 	],
 	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
 	"mounts": [
-		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
-		"source=${localEnv:HOME}/.gnupg,target=/home/vscode/.gnupg,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gnupg,target=/home/node/.gnupg,type=bind,consistency=cached",
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
